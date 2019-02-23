@@ -2,7 +2,7 @@ package ru.today.news
 
 import android.app.Application
 import android.content.res.Resources
-import ru.today.news.injection.AppComponent
+import ru.today.news.injection.components.AppComponent
 import timber.log.Timber
 
 class NewsApp : Application() {
