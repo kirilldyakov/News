@@ -1,7 +1,8 @@
-package ru.today.news
+package ru.today.news.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.today.news.R
 
 class MainActivity : AppCompatActivity() {
 
