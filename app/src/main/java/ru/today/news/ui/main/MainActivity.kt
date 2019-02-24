@@ -22,9 +22,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainMvvm.ViewModel>(), Ma
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setAndBindContentView(savedInstanceState, R.layout.activity_main)
 
-       // setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.toolbar)
     }
 }
 
