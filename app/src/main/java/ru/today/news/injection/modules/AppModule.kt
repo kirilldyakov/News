@@ -7,6 +7,8 @@ import dagger.Module
 import dagger.Provides
 import ru.today.news.injection.qualifier.AppContext
 import ru.today.news.injection.scopes.PerApplication
+import ru.today.news.ui.base.feedback.ApplicationToaster
+import ru.today.news.ui.base.feedback.Toaster
 
 @Module
 class AppModule(private  val app: Application) {
@@ -20,4 +22,7 @@ class AppModule(private  val app: Application) {
     @PerApplication
     internal fun provideResources(): Resources = app.resources
 
+    @Provides
+    @PerApplication
+    internal fun provideToaster(): Toaster = ApplicationToaster(app)
 }

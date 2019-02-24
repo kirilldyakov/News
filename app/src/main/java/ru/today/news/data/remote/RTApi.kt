@@ -8,7 +8,7 @@ import ru.today.news.data.remote.responses.everything.EverythingModel
 import ru.today.news.data.remote.responses.sources.SourcesModel
 import ru.today.news.data.remote.responses.topheadlines.TopHeadlinesModel
 
-interface RTApi{
+interface RTApi {
 
     @GET("/v2/top-headlines")
     fun getTopHeadlines(
@@ -24,16 +24,22 @@ interface RTApi{
     @GET("/v2/everything")
     fun everything(
         @Header("X-Api-Key") apiKey: String,
-        @Query("q") query: String,
-        @Query("sources") sources: String,
-        @Query("domains") domains: String,
-        @Query("excludeDomains") excludeDomains: String,
-        @Query("from") fromDate: String,
-        @Query("to") toDate: String,
-        @Query("language") language: String,
-        @Query("sortBy") sortby: String,
-        @Query("pageSize") pagesize: Int,
-        @Query("page") page: Int
+        @Query("q") query: String?
+    ): Single<EverythingModel>
+
+    @GET("/v2/everything")
+    fun everything(
+        @Header("X-Api-Key") apiKey: String,
+        @Query("q") query: String?,
+        @Query("sources") sources: String?,
+        @Query("domains") domains: String?,
+        @Query("excludeDomains") excludeDomains: String?,
+        @Query("from") fromDate: String?,
+        @Query("to") toDate: String?,
+        @Query("language") language: String?,
+        @Query("sortBy") sortby: String?,
+        @Query("pageSize") pagesize: Int?,
+        @Query("page") page: Int?
     ): Single<EverythingModel>
 
     //https://newsapi.org/docs/endpoints/sources

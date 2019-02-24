@@ -24,13 +24,11 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-                android:layout_height="match_parent"
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="Nothing to see here!"
-                 />
+                android:layout_height="match_parent"
+                android:foreground="?android:windowContentOverlay" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
