@@ -7,26 +7,52 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import dagger.android.DaggerActivity
 import io.reactivex.disposables.CompositeDisposable
+import ru.today.news.BR
+import ru.today.news.NewsApp
 import ru.today.news.injection.components.ActivityComponent
+import ru.today.news.injection.components.DaggerActivityComponent
+import ru.today.news.injection.modules.ActivityModule
 import ru.today.news.injection.qualifier.ActivityDisposable
-import ru.today.news.ui.view.MvvmView
-import ru.today.news.ui.viewmodel.MvvmViewModel
+import ru.today.news.ui.base.view.MvvmView
+import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.util.extension.attachViewOrThrowRuntimeException
+import timber.log.Timber
 import javax.inject.Inject
 
 abstract class BaseActivity<B : ViewDataBinding, VM : MvvmViewModel<*>> : AppCompatActivity(), MvvmView {
 
-    protected lateinit var binding:B
-    @Inject protected lateinit var viewModel: VM
+    protected lateinit var binding: B
+    @Inject
+    protected lateinit var viewModel: VM
+
 
     @field:[Inject ActivityDisposable]
-    lateinit var disposable: CompositeDisposable
+    internal lateinit var disposable: CompositeDisposable
 
-//    val activityComponent:ActivityComponent by lazy{
-//
-//    }
+    internal val activityComponent: ActivityComponent by lazy {
+        DaggerActivityComponent.builder()
+            .activityModule(ActivityModule(this))
+            .appComponent(NewsApp.appComponent)
+            .build()
+    }
+
+    @CallSuper
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        viewModel.saveInstanceState(outState)
+    }
+
+    @CallSuper
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        try {
+            ActivityComponent::class.java.getDeclaredMethod("inject", this::class.java).invoke(activityComponent, this)
+        } catch (e: NoSuchMethodException) {
+            Timber.e(e)
+        }
+    }
 
     @CallSuper
     override fun onDestroy() {
@@ -35,9 +61,11 @@ abstract class BaseActivity<B : ViewDataBinding, VM : MvvmViewModel<*>> : AppCom
         viewModel.detachView()
     }
 
+    /* Sets the content view, creates the binding and attaches the view to the view model */
     protected fun setAndBindContentView(savedInstanceState: Bundle?, @LayoutRes layoutResID: Int) {
         binding = DataBindingUtil.setContentView<B>(this, layoutResID)
-        //binding.setVariable(BR.vm, viewModel)
+        binding.setVariable(BR.vm, viewModel)
         viewModel.attachViewOrThrowRuntimeException(this, savedInstanceState)
     }
+
 }

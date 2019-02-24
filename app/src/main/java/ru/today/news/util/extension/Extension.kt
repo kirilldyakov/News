@@ -1,9 +1,9 @@
 package ru.today.news.util.extension
 
 import android.os.Bundle
-import ru.today.news.ui.view.MvvmView
-import ru.today.news.ui.viewmodel.MvvmViewModel
-import ru.today.news.ui.viewmodel.NoOpViewModel
+import ru.today.news.ui.base.view.MvvmView
+import ru.today.news.ui.base.viewmodel.MvvmViewModel
+import ru.today.news.ui.base.viewmodel.NoOpViewModel
 
 // ViewModel
 

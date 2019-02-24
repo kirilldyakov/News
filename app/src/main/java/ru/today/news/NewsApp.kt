@@ -3,6 +3,8 @@ package ru.today.news
 import android.app.Application
 import android.content.res.Resources
 import ru.today.news.injection.components.AppComponent
+import ru.today.news.injection.components.DaggerAppComponent
+import ru.today.news.injection.modules.AppModule
 import timber.log.Timber
 
 class NewsApp : Application() {
@@ -25,5 +27,9 @@ class NewsApp : Application() {
         Timber.plant(Timber.DebugTree())
 
         instance = this
+
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build()
     }
 }
