@@ -8,6 +8,7 @@ import ru.today.news.injection.modules.ActivityModule
 import ru.today.news.injection.modules.ViewModelModule
 import ru.today.news.injection.qualifier.ActivityContext
 import ru.today.news.injection.qualifier.ActivityDisposable
+import ru.today.news.injection.qualifier.ActivityFragmentManager
 import ru.today.news.injection.scopes.PerActivity
 import ru.today.news.ui.main.MainActivity
 
@@ -23,8 +24,12 @@ interface ActivityComponent : ActivityComponentProvides {
 interface ActivityComponentProvides : AppComponentProvides {
     @ActivityContext
     fun activityContext(): Context
-    @ActivityFragmentManager fun defaultFragmentManager(): FragmentManager
-    @ActivityDisposable fun activityDisposable(): CompositeDisposable
+
+    @ActivityFragmentManager
+    fun defaultFragmentManager(): FragmentManager
+
+    @ActivityDisposable
+    fun activityDisposable(): CompositeDisposable
 
 //    fun navigator(): Navigator
 //    fun snacker(): Snacker
