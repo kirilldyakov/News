@@ -17,12 +17,12 @@ interface RTApi{
         @Query("category") category: String,
         @Query("sources") sources: String,
         @Query("q") query: String,
-        @Query("pageSize") pagesize: Integer,
-        @Query("page") page: Integer
+        @Query("pageSize") pagesize: Int,
+        @Query("page") page: Int
     ): Single<TopHeadlinesModel>
 
     @GET("/v2/everything")
-    fun getEverything(
+    fun everything(
         @Header("X-Api-Key") apiKey: String,
         @Query("q") query: String,
         @Query("sources") sources: String,
@@ -32,8 +32,8 @@ interface RTApi{
         @Query("to") toDate: String,
         @Query("language") language: String,
         @Query("sortBy") sortby: String,
-        @Query("pageSize") pagesize: Integer,
-        @Query("page") page: Integer
+        @Query("pageSize") pagesize: Int,
+        @Query("page") page: Int
     ): Single<EverythingModel>
 
     //https://newsapi.org/docs/endpoints/sources
