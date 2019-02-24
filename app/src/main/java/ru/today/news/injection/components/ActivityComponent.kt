@@ -5,7 +5,9 @@ import androidx.fragment.app.FragmentManager
 import dagger.Component
 import io.reactivex.disposables.CompositeDisposable
 import ru.today.news.injection.modules.ActivityModule
+import ru.today.news.injection.modules.ViewModelModule
 import ru.today.news.injection.qualifier.ActivityContext
+import ru.today.news.injection.qualifier.ActivityDisposable
 import ru.today.news.injection.scopes.PerActivity
 import ru.today.news.ui.main.MainActivity
 
@@ -24,6 +26,6 @@ interface ActivityComponentProvides : AppComponentProvides {
     @ActivityFragmentManager fun defaultFragmentManager(): FragmentManager
     @ActivityDisposable fun activityDisposable(): CompositeDisposable
 
-    fun navigator(): Navigator
-    fun snacker(): Snacker
+//    fun navigator(): Navigator
+//    fun snacker(): Snacker
 }

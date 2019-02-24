@@ -5,6 +5,7 @@ import android.os.Bundle
 import retrofit2.Retrofit
 import ru.today.news.R
 import ru.today.news.data.remote.RTApi
+import ru.today.news.ui.base.BaseActivity
 import javax.inject.Inject
 
 
