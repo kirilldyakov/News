@@ -10,6 +10,9 @@
       <item index="0" class="java.lang.String" itemvalue="ru.today.news.injection.scopes.PerActivity" />
     </list>
   </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Рабочий стол/JavaDoc" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -8,6 +8,9 @@ import ru.today.news.data.remote.responses.everything.EverythingModel
 import ru.today.news.data.remote.responses.sources.SourcesModel
 import ru.today.news.data.remote.responses.topheadlines.TopHeadlinesModel
 
+/**
+ * Интерфейс для работы Retrofit
+ */
 interface RTApi {
 
     @GET("/v2/top-headlines")

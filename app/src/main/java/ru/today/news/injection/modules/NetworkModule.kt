@@ -12,19 +12,23 @@ import ru.today.news.data.remote.RTApi
 import ru.today.news.injection.scopes.PerApplication
 import java.util.concurrent.TimeUnit
 
+/**
+ * Модуль для организации работы с сетевыми запросами
+ */
 @Module
 class NetworkModule {
 
     private val baseUrl = "https://newsapi.org/"
     private val authKeyValue = "316663a2285f472b95de0a7f73cf2046"
 
-
+    //Ковертер Json в объекты
     @Provides
     @PerApplication
     fun provideGson(): Gson {
         return GsonBuilder().create()
     }
 
+    //Настройка работы с сетью
     @Provides
     @PerApplication
     fun provideOkHttpClient(): OkHttpClient {
@@ -41,6 +45,8 @@ class NetworkModule {
         return OkHttpClient()
     }
 
+
+    //Класс RTApi - доступ с API сервису с помощью HTTP клиента Retrofit.
     @Provides
     @PerApplication
     fun providesRTApi(gson: Gson, okHttpClient: OkHttpClient): RTApi {

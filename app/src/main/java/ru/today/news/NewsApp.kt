@@ -7,6 +7,11 @@ import ru.today.news.injection.components.DaggerAppComponent
 import ru.today.news.injection.modules.AppModule
 import timber.log.Timber
 
+/**
+ * NewsApp - основной класс приложения
+ *
+ * DaggerAppComponent создаётся даггером на этапе компиляции.
+ */
 class NewsApp : Application() {
 
     companion object {

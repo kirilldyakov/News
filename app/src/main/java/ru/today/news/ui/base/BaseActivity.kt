@@ -20,6 +20,10 @@ import ru.today.news.util.extension.attachViewOrThrowRuntimeException
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Родительский класс для activity.
+ * Здесь происходит связывание ViewDataBinding-"мапера"(биндинга) и данных (MvvmViewModel)
+ */
 abstract class BaseActivity<B : ViewDataBinding, VM : MvvmViewModel<*>> : AppCompatActivity(), MvvmView {
 
     protected lateinit var binding: B
@@ -61,7 +65,6 @@ abstract class BaseActivity<B : ViewDataBinding, VM : MvvmViewModel<*>> : AppCom
         viewModel.detachView()
     }
 
-    /* Sets the content view, creates the binding and attaches the view to the view model */
     protected fun setAndBindContentView(savedInstanceState: Bundle?, @LayoutRes layoutResID: Int) {
         binding = DataBindingUtil.setContentView<B>(this, layoutResID)
         binding.setVariable(BR.vm, viewModel)

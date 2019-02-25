@@ -12,10 +12,13 @@ import ru.today.news.injection.qualifier.ActivityFragmentManager
 import ru.today.news.injection.scopes.PerActivity
 import ru.today.news.ui.main.MainActivity
 
+/**
+ * Компонент является связующим звеном между модулями и просителями зависимостей.
+ * Для внедрения зависимостей на уровне Activity
+ */
 @PerActivity
 @Component(dependencies = [(AppComponent::class)], modules = [(ActivityModule::class), (ViewModelModule::class)])
 interface ActivityComponent : ActivityComponentProvides {
-    // create inject methods for your Activities here
 
     fun inject(activity: MainActivity)
 

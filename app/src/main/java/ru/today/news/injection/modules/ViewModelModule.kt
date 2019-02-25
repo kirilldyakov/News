@@ -14,12 +14,12 @@ abstract class ViewModelModule {
     // Fragments
 
     @Binds
-    internal abstract fun bindAllCountriesViewModel(allCountriesViewModel: AllArticlesViewModel): IAllArticlesViewModel
+    internal abstract fun bindAllArticlesViewModel(allCountriesViewModel: AllArticlesViewModel): IAllArticlesViewModel
 
 
     // View Holders
 
     @Binds
-    internal abstract fun bindCountryViewModel(articleViewModel: ArticleViewModel): ArticleMvvm.ViewModel
+    internal abstract fun bindArticleViewModel(articleViewModel: ArticleViewModel): ArticleMvvm.ViewModel
 
 }

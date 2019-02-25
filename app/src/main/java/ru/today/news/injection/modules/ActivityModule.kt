@@ -12,6 +12,9 @@ import ru.today.news.injection.qualifier.ActivityDisposable
 import ru.today.news.injection.qualifier.ActivityFragmentManager
 import ru.today.news.injection.scopes.PerActivity
 
+/**
+ * Класс-модуль предоставляет необходимые зависимости в рамках работы в Activity
+ */
 @Module
 class ActivityModule(private val activity: AppCompatActivity) {
 

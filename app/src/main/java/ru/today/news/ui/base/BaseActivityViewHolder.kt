@@ -6,12 +6,17 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import ru.today.news.BR
 import ru.today.news.injection.components.ActivityViewHolderComponent
+import ru.today.news.injection.components.DaggerActivityViewHolderComponent
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.util.extension.attachViewOrThrowRuntimeException
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Базовый класс для ViewHolder.
+ * Здесь происходит связывание ViewDataBinding-"мапера"(биндинга) и данных (MvvmViewModel)
+ */
 abstract class BaseActivityViewHolder<B : ViewDataBinding, VM : MvvmViewModel<*>>(itemView: View) : RecyclerView.ViewHolder(itemView),
     MvvmView {
 

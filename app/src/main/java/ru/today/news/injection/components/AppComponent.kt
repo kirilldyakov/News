@@ -10,13 +10,19 @@ import ru.today.news.injection.modules.NetworkModule
 import ru.today.news.injection.qualifier.AppContext
 import ru.today.news.ui.base.feedback.Toaster
 
-
+/**
+ * Компонент является связующим звеном между модулями и просителями зависимостей.
+ * Для внедрения зависимостей на уровне приложения
+ */
 @PerApplication
 @Component(modules = [(AppModule::class),(NetworkModule::class)])
 interface AppComponent : AppComponentProvides {
 
 }
 
+/**
+ *Используются для внедрения зависимостей через вызов функции
+ */
 interface AppComponentProvides {
     @AppContext
     fun appContext(): Context

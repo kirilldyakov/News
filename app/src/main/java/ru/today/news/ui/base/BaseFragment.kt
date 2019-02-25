@@ -20,6 +20,15 @@ import ru.today.news.util.extension.attachViewOrThrowRuntimeException
 import timber.log.Timber
 import javax.inject.Inject
 
+
+/**
+ * Родительский класс для фрагмента
+ * @param B : ViewDataBinding
+ * @param VM : MvvmViewModel<*>
+ * @property binding B
+ * @property viewModel VM
+ * @property fragmentComponent FragmentComponent
+ */
 abstract class BaseFragment<B : ViewDataBinding, VM : MvvmViewModel<*>> : Fragment(), MvvmView {
 
     protected lateinit var binding: B
@@ -54,20 +63,13 @@ abstract class BaseFragment<B : ViewDataBinding, VM : MvvmViewModel<*>> : Fragme
     override fun onDestroyView() {
         super.onDestroyView()
         viewModel.detachView()
-//        if (!viewModel.javaClass.isAnnotationPresent(PerFragment::class.java)) {
-//            refWatcher.watch(viewModel)
-//        }
     }
 
     @CallSuper
     override fun onDestroy() {
         super.onDestroy()
-//        refWatcher.watch(this)
-//        refWatcher.watch(fragmentComponent)
     }
 
-
-    /* Sets the content view, creates the binding and attaches the view to the view model */
     protected fun setAndBindContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,
