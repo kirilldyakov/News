@@ -13,6 +13,7 @@ import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.BaseViewModel
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.ui.base.viewmodel.NoOpViewModel
+import ru.today.news.ui.main.viewpager.MainAdapter
 import javax.inject.Inject
 
 
@@ -27,7 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, NoOpViewModel<MvvmView>>(
         setSupportActionBar(binding.toolbar)
 
         binding.viewPager.adapter = adapter
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
+            //binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
 

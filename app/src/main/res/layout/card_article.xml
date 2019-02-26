@@ -14,9 +14,9 @@
         android:layout_marginLeft="6dp"
         android:layout_marginTop="6dp"
         android:layout_marginRight="6dp"
-        android:layout_marginBottom='@{vm.cardBottomMargin}'
+        android:layout_marginBottom="8dp"
         android:foreground="?attr/selectableItemBackground"
-        android:onClick="@{vm::onCardClick}"
+
         app:cardElevation="2dp"
         app:cardCornerRadius="2dp"
         app:cardUseCompatPadding="true">
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
-                android:text="@{vm.name}"
+                android:text="vm.name"
                 style="@style/TextAppearance.AppCompat.Headline"
                 tools:text="Country"/>
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:paddingTop="4dp"
-                android:text='@{vm.region}'
+                android:text="vm.region"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Region: Europe"/>
 
@@ -55,8 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:paddingTop="4dp"
-                android:visibility="@{vm.capitalVisible}"
-                android:text='@{vm.capital}'
+                android:text="vm.capital"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Capital: City"/>
 
@@ -65,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
-                android:text='@{vm.population}'
+                android:text="{vm.population}"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Population: 1000000"/>
 
@@ -74,8 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
-                android:visibility='@{vm.locationVisible}'
-                android:text='@{vm.location}'
+                android:text="vm.location"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Location: 12.45, 67.89"/>
 
@@ -88,8 +86,8 @@
             android:layout_marginTop="12dp"
             android:layout_gravity="right|top"
             android:adjustViewBounds="true"
-            android:src="@{vm.bookmarkDrawable}"
-            android:onClick="@{vm::onBookmarkClick}"
+            android:src="@drawable/ic_bookmark_border_black_24dp"
+
             tools:src="@drawable/ic_bookmark_border_black_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 
@@ -100,9 +98,8 @@
             android:layout_marginTop="50dp"
             android:layout_gravity="right|top"
             android:adjustViewBounds="true"
-            android:visibility='@{vm.mapVisible}'
             app:srcCompat="@drawable/ic_map_black_24dp"
-            android:onClick="@{vm::onMapClick}"
+
             tools:src="@drawable/ic_map_black_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 

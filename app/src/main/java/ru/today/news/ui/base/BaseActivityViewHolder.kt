@@ -10,6 +10,7 @@ import ru.today.news.injection.components.DaggerActivityViewHolderComponent
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.util.extension.attachViewOrThrowRuntimeException
+import ru.today.news.util.extension.castWithUnwrap
 import timber.log.Timber
 import javax.inject.Inject
 

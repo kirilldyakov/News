@@ -23,7 +23,7 @@ import ru.today.news.ui.base.viewmodel.MvvmViewModel
 interface IArticleViewModel<V : MvvmView> : MvvmViewModel<V> {
 
 //    fun onMapClick()
-    fun onBookmarkClick()
+    //fun onBookmarkClick()
     fun update(article: ArticlesItem, isLast: Boolean)
 
     // Properties
