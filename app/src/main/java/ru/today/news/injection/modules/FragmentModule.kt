@@ -19,11 +19,6 @@ class FragmentModule(private val fragment: Fragment) {
         return fragment.childFragmentManager
     }
 
-//    @Provides
-//    @PerFragment
-//    internal fun provideFragmentNavigator(): FragmentNavigator {
-//        return ChildFragmentNavigator(fragment)
-//    }
 
     @Provides
     @PerFragment

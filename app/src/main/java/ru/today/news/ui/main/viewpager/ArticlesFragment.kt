@@ -19,7 +19,11 @@ abstract class ArticlesFragment<V : MvvmViewModel<ArticlesView>> : BaseFragment<
     protected lateinit var adapter: ArticleAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return setAndBindContentView(inflater, container, savedInstanceState, R.layout.fragment_recyclerview)
+        return setAndBindContentView(
+            inflater
+            , container
+            , savedInstanceState
+            , R.layout.fragment_recyclerview)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

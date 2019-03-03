@@ -46,7 +46,9 @@ class NetworkModule {
     }
 
 
-    //Класс RTApi - доступ с API сервису с помощью HTTP клиента Retrofit.
+    /**
+     * Класс RTApi - доступ с API сервису с помощью HTTP клиента Retrofit.
+     */
     @Provides
     @PerApplication
     fun providesRTApi(gson: Gson, okHttpClient: OkHttpClient): RTApi {

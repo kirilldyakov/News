@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
-                android:text="vm.name"
+                android:text="@{vm.author}"
                 style="@style/TextAppearance.AppCompat.Headline"
                 tools:text="Country"/>
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:paddingTop="4dp"
-                android:text="vm.region"
+                android:text="vm.author"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Region: Europe"/>
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:paddingTop="4dp"
-                android:text="vm.capital"
+                android:text="vm.author"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Capital: City"/>
 
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
-                android:text="{vm.population}"
+                android:text="{vm.author}"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Population: 1000000"/>
 
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
-                android:text="vm.location"
+                android:text="vm.author"
                 style="@style/TextAppearance.AppCompat"
                 tools:text="Location: 12.45, 67.89"/>
 

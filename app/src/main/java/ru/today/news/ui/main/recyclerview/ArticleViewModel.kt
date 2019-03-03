@@ -1,6 +1,7 @@
 package ru.today.news.ui.main.recyclerview
 
 import android.content.Context
+import android.util.Log
 import ru.today.news.data.remote.responses.everything.ArticlesItem
 import ru.today.news.injection.qualifier.AppContext
 import ru.today.news.injection.scopes.PerViewHolder
