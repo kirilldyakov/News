@@ -32,6 +32,11 @@ interface RTApi {
 
     @GET("/v2/everything")
     fun everything(
+        @Header("X-Api-Key") apiKey: String
+    ): Single<EverythingModel>
+
+    @GET("/v2/everything")
+    fun everything(
         @Header("X-Api-Key") apiKey: String,
         @Query("q") query: String?,
         @Query("sources") sources: String?,

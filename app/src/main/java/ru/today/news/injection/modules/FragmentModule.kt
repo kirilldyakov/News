@@ -8,6 +8,8 @@ import io.reactivex.disposables.CompositeDisposable
 import ru.today.news.injection.qualifier.ChildFragmentManager
 import ru.today.news.injection.qualifier.FragmentDisposable
 import ru.today.news.injection.scopes.PerFragment
+import ru.today.news.ui.base.navigator.ChildFragmentNavigator
+import ru.today.news.ui.base.navigator.FragmentNavigator
 
 @Module
 class FragmentModule(private val fragment: Fragment) {
@@ -19,6 +21,11 @@ class FragmentModule(private val fragment: Fragment) {
         return fragment.childFragmentManager
     }
 
+    @Provides
+    @PerFragment
+    internal fun provideFragmentNavigator(): FragmentNavigator {
+        return ChildFragmentNavigator(fragment)
+    }
 
     @Provides
     @PerFragment

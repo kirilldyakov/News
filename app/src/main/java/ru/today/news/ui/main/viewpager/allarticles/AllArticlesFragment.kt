@@ -26,7 +26,7 @@ class AllArticlesFragment : ArticlesFragment<IAllArticlesViewModel>(), ArticlesV
         super.onRefresh(success)
 
         if (!success) {
-            Snackbar.make(binding.recyclerView, "Could not load countries", Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(binding.recyclerView, getString(R.string.news_not_loaded), Snackbar.LENGTH_INDEFINITE)
                 .setAction(R.string.snackbar_action_retry) { viewModel.reloadData() }
                 .show()
         }

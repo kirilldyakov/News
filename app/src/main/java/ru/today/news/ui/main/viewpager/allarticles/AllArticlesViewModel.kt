@@ -36,7 +36,7 @@ constructor(override val adapter: ArticleAdapter, private val rtApi: RTApi) : Ba
 
     override fun reloadData() {
         compositeDisposable.add(
-            rtApi.everything("316663a2285f472b95de0a7f73cf2046", "Путин")
+            rtApi.everything("316663a2285f472b95de0a7f73cf2046")
                 .doOnSuccess({ Timber.d("Collections.sort(it)") })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

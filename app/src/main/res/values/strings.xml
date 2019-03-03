@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">News</string>
+    <string name="app_name">Новости</string>
     <string name="snackbar_action_retry">Повторить</string>
-    <string name="tab_title_all">ALL</string>
-    <string name="tab_title_favorites">FAV</string>
+    <string name="tab_title_all">Все Новости</string>
+    <string name="tab_title_russia">Россия</string>
+    <string name="news_not_loaded">Новости не загрузились</string>
 </resources>

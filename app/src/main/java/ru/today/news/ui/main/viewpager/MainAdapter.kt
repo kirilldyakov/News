@@ -28,7 +28,7 @@ constructor(@ActivityFragmentManager fm: FragmentManager, private val res: Resou
         return res.getString(
                 when(position) {
                     0 -> R.string.tab_title_all
-                    else -> R.string.tab_title_favorites
+                    else -> R.string.tab_title_russia
                 }
         );
     }

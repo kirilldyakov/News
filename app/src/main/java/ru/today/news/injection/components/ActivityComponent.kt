@@ -10,6 +10,7 @@ import ru.today.news.injection.qualifier.ActivityContext
 import ru.today.news.injection.qualifier.ActivityDisposable
 import ru.today.news.injection.qualifier.ActivityFragmentManager
 import ru.today.news.injection.scopes.PerActivity
+import ru.today.news.ui.base.navigator.Navigator
 import ru.today.news.ui.main.MainActivity
 
 /**
@@ -34,6 +35,6 @@ interface ActivityComponentProvides : AppComponentProvides {
     @ActivityDisposable
     fun activityDisposable(): CompositeDisposable
 
-//    fun navigator(): Navigator
+    fun navigator(): Navigator
 //    fun snacker(): Snacker
 }

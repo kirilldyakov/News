@@ -37,14 +37,4 @@ constructor() : RecyclerView.Adapter<ArticleViewHolder>(), FastScrollRecyclerVie
     override fun getSectionName(position: Int): String {
         return articlesList[position].title!!.substring(0, 1)
     }
-
-    //    @BindingAdapter("android:src")
-//    fun setImageUrl(view: ImageView, imageUrl: String) {
-//        Glide.with(view.context)
-//            .load(imageUrl)
-//            .placeholder(R.drawable.ic_image_black_24dp)
-//            .into(view)
-//    }
-
-
 }
