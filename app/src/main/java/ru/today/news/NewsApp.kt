@@ -6,6 +6,9 @@ import ru.today.news.injection.components.AppComponent
 import ru.today.news.injection.components.DaggerAppComponent
 import ru.today.news.injection.modules.AppModule
 import timber.log.Timber
+import android.R
+
+
 
 /**
  * NewsApp - основной класс приложения
@@ -36,5 +39,7 @@ class NewsApp : Application() {
         appComponent = DaggerAppComponent.builder()
             .appModule(AppModule(this))
             .build()
+
+
     }
 }

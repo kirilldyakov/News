@@ -11,11 +11,6 @@ import ru.today.news.ui.main.viewpager.ArticlesView
 
 class AllArticlesFragment : ArticlesFragment<IAllArticlesViewModel>(), ArticlesView {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-        viewModel.reloadData()
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

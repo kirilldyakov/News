@@ -57,12 +57,40 @@ abstract class BaseArticleViewModel<V : MvvmView>(@AppContext context: Context) 
 //        notifyPropertyChanged(BR.bookmarkDrawable)
 //    }
 //
-//    override fun update(article: ArticlesItem, isLast: Boolean) {
-//        this.isLast = isLast
-//        this.article = article
-//
-//        notifyChange()
-//    }
+    override fun update(article: ArticlesItem, isLast: Boolean) {
+        this.isLast = isLast
+        this.article = article
+
+        notifyChange()
+    }
+
+
+    override val publishedAt: String?
+        get() {
+            return publishedAt
+        }
+    override val urlToImage: String?
+        get() {
+            return article.urlToImage
+        }
+    override val description: String?
+        get() {
+            return description
+        }
+    override val url: String?
+        get() {
+            return url
+        }
+
+    override val author: String?
+        get() {
+            return article.author
+        }
+
+    override val title: String?
+        get() {
+            return article.title
+        }
 //
 //    override val name: String
 //        get() {
