@@ -25,5 +25,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, NoOpViewModel<MvvmView>>(
         binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
+    companion object {
+        const val URL_TO_IMAGE = "URL_TO_IMAGE"
+        const val DESCRIPTION = "DESCRIPTION"
+        const val TITLE = "TITLE"
+
+    }
+
 
 }
