@@ -13,10 +13,10 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        var bundle = intent.getBundleExtra("_args")
-        var title:String = bundle.getString(MainActivity.TITLE)
-        var urlToImage:String = bundle.getString(MainActivity.URL_TO_IMAGE)
-        var description:String = bundle.getString(MainActivity.DESCRIPTION)
+        val bundle = intent.getBundleExtra("_args")
+        val title:String? = bundle.getString(MainActivity.TITLE)
+        val urlToImage:String? = bundle.getString(MainActivity.URL_TO_IMAGE)
+        val description:String? = bundle.getString(MainActivity.DESCRIPTION)
 
         Glide.with(this)
             .load(urlToImage)
