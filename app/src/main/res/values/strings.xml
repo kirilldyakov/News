@@ -4,4 +4,5 @@
     <string name="tab_title_all">Все Новости</string>
     <string name="tab_title_russia">Россия</string>
     <string name="news_not_loaded">Новости не загрузились</string>
+    <string name="news_picture">NewsPicture</string>
 </resources>
