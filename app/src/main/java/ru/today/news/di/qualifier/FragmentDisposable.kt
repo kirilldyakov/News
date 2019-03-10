@@ -1,7 +1,7 @@
-package ru.today.news.injection.qualifier
+package ru.today.news.di.qualifier
 
 import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
-annotation class ChildFragmentManager
+annotation class FragmentDisposable

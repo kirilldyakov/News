@@ -1,4 +1,4 @@
-package ru.today.news.injection.modules
+package ru.today.news.di.modules
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,10 @@ import androidx.fragment.app.FragmentManager
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
-import ru.today.news.injection.qualifier.ActivityContext
-import ru.today.news.injection.qualifier.ActivityDisposable
-import ru.today.news.injection.qualifier.ActivityFragmentManager
-import ru.today.news.injection.scopes.PerActivity
+import ru.today.news.di.qualifier.ActivityContext
+import ru.today.news.di.qualifier.ActivityDisposable
+import ru.today.news.di.qualifier.ActivityFragmentManager
+import ru.today.news.di.scopes.PerActivity
 import ru.today.news.ui.base.navigator.ActivityNavigator
 import ru.today.news.ui.base.navigator.Navigator
 

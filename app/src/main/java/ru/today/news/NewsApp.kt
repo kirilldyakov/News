@@ -2,12 +2,10 @@ package ru.today.news
 
 import android.app.Application
 import android.content.res.Resources
-import ru.today.news.injection.components.AppComponent
-import ru.today.news.injection.components.DaggerAppComponent
-import ru.today.news.injection.modules.AppModule
+import ru.today.news.di.components.AppComponent
+import ru.today.news.di.components.DaggerAppComponent
+import ru.today.news.di.modules.AppModule
 import timber.log.Timber
-import android.R
-
 
 
 /**

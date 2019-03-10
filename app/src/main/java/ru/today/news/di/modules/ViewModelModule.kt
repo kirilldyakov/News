@@ -1,4 +1,4 @@
-package ru.today.news.injection.modules
+package ru.today.news.di.modules
 
 import dagger.Binds
 import dagger.Module

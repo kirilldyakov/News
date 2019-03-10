@@ -1,13 +1,13 @@
-package ru.today.news.injection.modules
+package ru.today.news.di.modules
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
-import ru.today.news.injection.qualifier.ChildFragmentManager
-import ru.today.news.injection.qualifier.FragmentDisposable
-import ru.today.news.injection.scopes.PerFragment
+import ru.today.news.di.qualifier.ChildFragmentManager
+import ru.today.news.di.qualifier.FragmentDisposable
+import ru.today.news.di.scopes.PerFragment
 import ru.today.news.ui.base.navigator.ChildFragmentNavigator
 import ru.today.news.ui.base.navigator.FragmentNavigator
 

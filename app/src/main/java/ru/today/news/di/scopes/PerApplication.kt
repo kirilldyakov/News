@@ -1,4 +1,4 @@
-package ru.today.news.injection.scopes
+package ru.today.news.di.scopes
 
 import javax.inject.Scope
 

@@ -1,4 +1,4 @@
-package ru.today.news.injection.modules
+package ru.today.news.di.modules
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.today.news.data.remote.RTApi
-import ru.today.news.injection.scopes.PerApplication
+import ru.today.news.di.scopes.PerApplication
 import java.util.concurrent.TimeUnit
 
 /**

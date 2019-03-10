@@ -1,11 +1,11 @@
-package ru.today.news.injection.components
+package ru.today.news.di.components
 
 import dagger.Component
 import io.reactivex.disposables.CompositeDisposable
-import ru.today.news.injection.modules.FragmentModule
-import ru.today.news.injection.modules.ViewModelModule
-import ru.today.news.injection.qualifier.FragmentDisposable
-import ru.today.news.injection.scopes.PerFragment
+import ru.today.news.di.modules.FragmentModule
+import ru.today.news.di.modules.ViewModelModule
+import ru.today.news.di.qualifier.FragmentDisposable
+import ru.today.news.di.scopes.PerFragment
 import ru.today.news.ui.main.viewpager.allarticles.AllArticlesFragment
 
 /**

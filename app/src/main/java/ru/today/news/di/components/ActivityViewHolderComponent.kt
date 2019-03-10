@@ -1,9 +1,9 @@
-package ru.today.news.injection.components
+package ru.today.news.di.components
 
 import dagger.Component
-import ru.today.news.injection.modules.ViewHolderModule
-import ru.today.news.injection.modules.ViewModelModule
-import ru.today.news.injection.scopes.PerViewHolder
+import ru.today.news.di.modules.ViewHolderModule
+import ru.today.news.di.modules.ViewModelModule
+import ru.today.news.di.scopes.PerViewHolder
 import ru.today.news.ui.main.recyclerview.ArticleViewHolder
 
 @PerViewHolder

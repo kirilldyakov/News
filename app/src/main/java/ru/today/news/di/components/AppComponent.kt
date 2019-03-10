@@ -1,13 +1,13 @@
-package ru.today.news.injection.components
+package ru.today.news.di.components
 
 import android.content.Context
 import android.content.res.Resources
 import dagger.Component
 import ru.today.news.data.remote.RTApi
-import ru.today.news.injection.scopes.PerApplication
-import ru.today.news.injection.modules.AppModule
-import ru.today.news.injection.modules.NetworkModule
-import ru.today.news.injection.qualifier.AppContext
+import ru.today.news.di.scopes.PerApplication
+import ru.today.news.di.modules.AppModule
+import ru.today.news.di.modules.NetworkModule
+import ru.today.news.di.qualifier.AppContext
 import ru.today.news.ui.base.feedback.Toaster
 
 /**

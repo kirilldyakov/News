@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import ru.today.news.R
-import ru.today.news.injection.qualifier.ActivityFragmentManager
+import ru.today.news.di.qualifier.ActivityFragmentManager
 
-import ru.today.news.injection.scopes.PerActivity
+import ru.today.news.di.scopes.PerActivity
 import ru.today.news.ui.main.viewpager.allarticles.AllArticlesFragment
 
 import javax.inject.Inject
