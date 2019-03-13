@@ -9,7 +9,7 @@ import ru.today.news.R
 import ru.today.news.databinding.FragmentRecyclerviewBinding
 import ru.today.news.ui.base.BaseFragment
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
-import ru.today.news.ui.main.recyclerview.ArticleAdapter
+import ru.today.news.ui.main.articlesRecyclerview.ArticleAdapter
 import javax.inject.Inject
 
 abstract class ArticlesFragment<V : MvvmViewModel<ArticlesView>> : BaseFragment<FragmentRecyclerviewBinding, V>(),

@@ -3,7 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="vm" type="ru.today.news.ui.main.recyclerview.ArticleMvvm.ViewModel"/>
+        <variable name="vm" type="ru.today.news.ui.main.articlesRecyclerview.ArticleMvvm.ViewModel"/>
     </data>
 <androidx.cardview.widget.CardView
         android:id="@+id/card_view"

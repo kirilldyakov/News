@@ -4,7 +4,7 @@ import dagger.Component
 import ru.today.news.di.modules.ViewHolderModule
 import ru.today.news.di.modules.ViewModelModule
 import ru.today.news.di.scopes.PerViewHolder
-import ru.today.news.ui.main.recyclerview.ArticleViewHolder
+import ru.today.news.ui.main.articlesRecyclerview.ArticleViewHolder
 
 @PerViewHolder
 @Component(

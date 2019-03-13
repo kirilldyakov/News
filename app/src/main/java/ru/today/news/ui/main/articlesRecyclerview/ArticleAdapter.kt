@@ -1,4 +1,4 @@
-package ru.today.news.ui.main.recyclerview
+package ru.today.news.ui.main.articlesRecyclerview
 //https://startandroid.ru/ru/courses/architecture-components/27-course/architecture-components/542-urok-14-paging-library-chast-1.html
 //https://medium.com/@paulhundal/paging-library-with-android-mvvm-6a3a4d94de72
 //https://github.com/googlesamples/android-architecture-components

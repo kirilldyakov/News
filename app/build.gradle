@@ -89,6 +89,11 @@ dependencies {
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     kapt 'android.arch.persistence.room:compiler:1.1.1'
 
+    /**
+    * Stetho
+    */
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+
     implementation 'com.simplecityapps:recyclerview-fastscroll:2.0.0'
 
 

@@ -9,7 +9,7 @@ import ru.today.news.data.remote.RTApi
 import ru.today.news.data.remote.responses.everything.ArticlesItem
 import ru.today.news.di.scopes.PerFragment
 import ru.today.news.ui.base.viewmodel.BaseViewModel
-import ru.today.news.ui.main.recyclerview.ArticleAdapter
+import ru.today.news.ui.main.articlesRecyclerview.ArticleAdapter
 import ru.today.news.ui.main.viewpager.ArticlesView
 import ru.today.news.ui.main.viewpager.allarticles.IAllArticlesViewModel
 import timber.log.Timber

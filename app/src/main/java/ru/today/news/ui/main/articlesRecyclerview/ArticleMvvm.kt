@@ -1,4 +1,4 @@
-package ru.today.news.ui.main.recyclerview
+package ru.today.news.ui.main.articlesRecyclerview
 
 
 

@@ -2,10 +2,15 @@ package ru.today.news
 
 import android.app.Application
 import android.content.res.Resources
+import com.facebook.stetho.Stetho
 import ru.today.news.di.components.AppComponent
 import ru.today.news.di.components.DaggerAppComponent
 import ru.today.news.di.modules.AppModule
+import ru.today.news.di.modules.NetworkModule
+import ru.today.news.di.modules.NewsDatabaseModule
 import timber.log.Timber
+
+
 
 
 /**
@@ -36,8 +41,31 @@ class NewsApp : Application() {
 
         appComponent = DaggerAppComponent.builder()
             .appModule(AppModule(this))
+            .networkModule(NetworkModule())
+            .newsDatabaseModule(NewsDatabaseModule(this))
             .build()
 
+        initStetho()
+    }
 
+    private fun initStetho() {
+        // Create an InitializerBuilder
+        val initializerBuilder = Stetho.newInitializerBuilder(this)
+
+        // Enable Chrome DevTools
+        initializerBuilder.enableWebKitInspector(
+            Stetho.defaultInspectorModulesProvider(this)
+        )
+
+        // Enable command line interface
+        initializerBuilder.enableDumpapp(
+            Stetho.defaultDumperPluginsProvider(this)
+        )
+
+        // Use the InitializerBuilder to generate an Initializer
+        val initializer = initializerBuilder.build()
+
+        // Initialize Stetho with the Initializer
+        Stetho.initialize(initializer)
     }
 }
