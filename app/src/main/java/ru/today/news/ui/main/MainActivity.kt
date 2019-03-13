@@ -35,6 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, NoOpViewModel<MvvmView>>(
         binding.viewPager.adapter = adapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 
+        newsDatabase.categoryDao.deleteAll()
         newsDatabase.categoryDao.insert(Category("business", "бизнес",0))
         newsDatabase.categoryDao.insert(Category("entertainment", "здоровье",0))
         newsDatabase.categoryDao.insert(Category("general", "главные",0))

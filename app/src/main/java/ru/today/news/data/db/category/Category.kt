@@ -2,11 +2,12 @@ package ru.today.news.data.db.category
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import ru.today.news.data.db.category.Category.Companion.TABLE_NAME
 
 
-@Entity(tableName = TABLE_NAME)
+@Entity(tableName = TABLE_NAME, indices = arrayOf(Index(value = ["enname"], unique = true)))
 class Category {
 
     @PrimaryKey(autoGenerate = true)

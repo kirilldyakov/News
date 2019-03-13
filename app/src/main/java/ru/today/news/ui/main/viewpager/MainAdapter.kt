@@ -33,6 +33,6 @@ constructor(@ActivityFragmentManager fm: FragmentManager, private val res: Resou
     }
 
     override fun getCount(): Int {
-        return 3
+        return newsDatabase.categoryDao.getAll().count()
     }
 }
