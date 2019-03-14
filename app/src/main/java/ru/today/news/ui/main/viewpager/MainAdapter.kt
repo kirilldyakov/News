@@ -28,8 +28,8 @@ constructor(@ActivityFragmentManager fm: FragmentManager, private val res: Resou
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        var c = newsDatabase.categoryDao.getAll()
-        return c[position].ruName
+        var curCategory = newsDatabase.categoryDao.getAll()
+        return curCategory[position].ruName
     }
 
     override fun getCount(): Int {
