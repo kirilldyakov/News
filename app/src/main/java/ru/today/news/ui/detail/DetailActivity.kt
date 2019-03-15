@@ -24,6 +24,5 @@ class DetailActivity : AppCompatActivity() {
 
         tv_detail_body.text = description
         tv_detail_title.text = title
-
     }
 }

@@ -1,12 +1,8 @@
 package ru.today.news.ui
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import androidx.appcompat.widget.AppCompatDrawableManager
-import androidx.databinding.Bindable
-import ru.today.news.BR
 import ru.today.news.data.remote.responses.everything.ArticlesItem
-import ru.today.news.injection.qualifier.AppContext
+import ru.today.news.di.qualifier.AppContext
 import ru.today.news.ui.base.navigator.Navigator
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.BaseViewModel

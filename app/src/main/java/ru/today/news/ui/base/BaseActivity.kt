@@ -10,10 +10,10 @@ import androidx.databinding.ViewDataBinding
 import io.reactivex.disposables.CompositeDisposable
 import ru.today.news.BR
 import ru.today.news.NewsApp
-import ru.today.news.injection.components.ActivityComponent
-import ru.today.news.injection.components.DaggerActivityComponent
-import ru.today.news.injection.modules.ActivityModule
-import ru.today.news.injection.qualifier.ActivityDisposable
+import ru.today.news.di.components.ActivityComponent
+import ru.today.news.di.components.DaggerActivityComponent
+import ru.today.news.di.modules.ActivityModule
+import ru.today.news.di.qualifier.ActivityDisposable
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.util.extension.attachViewOrThrowRuntimeException
