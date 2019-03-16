@@ -1,4 +1,4 @@
-package ru.today.news.ui.main.articlesRecyclerview
+package ru.today.news.ui.search.searchRecyclerView
 
 import android.content.Context
 import android.os.Bundle
@@ -12,9 +12,9 @@ import ru.today.news.ui.main.MainActivity
 import javax.inject.Inject
 
 @PerViewHolder
-class ArticleViewModel
+class SearchViewModel
 @Inject
-constructor(@AppContext context: Context, navigator: Navigator) : BaseArticleViewModel<MvvmView>(context, navigator), ArticleMvvm.ViewModel {
+constructor(@AppContext context: Context, navigator: Navigator) : BaseArticleViewModel<MvvmView>(context, navigator), SearchMvvm.ViewModel {
     override val content: String?
         get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
 
