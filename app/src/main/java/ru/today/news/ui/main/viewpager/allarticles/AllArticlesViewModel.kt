@@ -6,7 +6,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import ru.today.news.data.remote.RTApi
-import ru.today.news.data.remote.responses.everything.ArticlesItem
+import ru.today.news.data.remote.responses.articles.ArticlesItem
 import ru.today.news.di.scopes.PerFragment
 import ru.today.news.ui.base.viewmodel.BaseViewModel
 import ru.today.news.ui.main.articlesRecyclerview.ArticleAdapter
@@ -18,8 +18,11 @@ import javax.inject.Inject
 @PerFragment
 class AllArticlesViewModel
 @Inject
-constructor(override val adapter: ArticleAdapter, private val rtApi: RTApi) : BaseViewModel<ArticlesView>(),
-    IAllArticlesViewModel {
+constructor(
+    override val adapter: ArticleAdapter,
+    private val rtApi: RTApi
+
+) : BaseViewModel<ArticlesView>(), IAllArticlesViewModel {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -33,14 +36,14 @@ constructor(override val adapter: ArticleAdapter, private val rtApi: RTApi) : Ba
         compositeDisposable.clear()
     }
 
-    override fun reloadData() {
+    override fun reloadData(category: String?) {
         compositeDisposable.add(
-            rtApi.everything("316663a2285f472b95de0a7f73cf2046","Москва")
+            rtApi.getTopHeadlines("316663a2285f472b95de0a7f73cf2046",category = category)
                 .doOnSuccess({ Timber.d("Collections.sort(it)") })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnError(Consumer {t ->  Timber.e(t) })
-                .subscribe({ it ->
+                .doOnError(Consumer { t -> Timber.e(t) })
+                .subscribe({
                     adapter.articlesList = it.articles as List<ArticlesItem>
                     adapter.notifyDataSetChanged()
                     view?.onRefresh(true)

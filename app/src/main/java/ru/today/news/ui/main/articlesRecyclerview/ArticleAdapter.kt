@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
 import ru.today.news.R
-import ru.today.news.data.remote.responses.everything.ArticlesItem
+import ru.today.news.data.remote.responses.articles.ArticlesItem
 import ru.today.news.di.scopes.PerFragment
 import ru.today.news.util.Utils
 import javax.inject.Inject

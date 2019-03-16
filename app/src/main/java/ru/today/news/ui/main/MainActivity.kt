@@ -35,14 +35,18 @@ class MainActivity : BaseActivity<ActivityMainBinding, NoOpViewModel<MvvmView>>(
         binding.viewPager.adapter = adapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 
+        fillCategories()
+    }
+
+    private fun fillCategories() {
         newsDatabase.categoryDao.deleteAll()
-        newsDatabase.categoryDao.insert(Category("business", "бизнес",0))
-        newsDatabase.categoryDao.insert(Category("entertainment", "здоровье",0))
-        newsDatabase.categoryDao.insert(Category("general", "главные",0))
-        newsDatabase.categoryDao.insert(Category("health", "здоровье",0))
-        newsDatabase.categoryDao.insert(Category("science", "наука",0))
-        newsDatabase.categoryDao.insert(Category("sports", "спорт",0))
-        newsDatabase.categoryDao.insert(Category("technology", "технологии",0))
+        newsDatabase.categoryDao.insert(Category("business", "бизнес", 0))
+        newsDatabase.categoryDao.insert(Category("entertainment", "развлечения", 0))
+        newsDatabase.categoryDao.insert(Category("general", "главные", 0))
+        newsDatabase.categoryDao.insert(Category("health", "здоровье", 0))
+        newsDatabase.categoryDao.insert(Category("science", "наука", 0))
+        newsDatabase.categoryDao.insert(Category("sports", "спорт", 0))
+        newsDatabase.categoryDao.insert(Category("technology", "технологии", 0))
     }
 
 
