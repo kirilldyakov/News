@@ -1,6 +1,7 @@
 package ru.today.news.ui.main.articlesRecyclerview
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import ru.today.news.di.qualifier.AppContext
 import ru.today.news.di.scopes.PerViewHolder
@@ -10,6 +11,12 @@ import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.detail.DetailActivity
 import ru.today.news.ui.main.MainActivity
 import javax.inject.Inject
+import androidx.core.content.ContextCompat.startActivity
+import ru.today.news.ui.main.MainActivity
+import android.app.ActivityOptions
+import android.R
+
+
 
 @PerViewHolder
 class ArticleViewModel
@@ -18,6 +25,15 @@ constructor(@AppContext context: Context, navigator: Navigator) : BaseArticleVie
     override val content: String?
         get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
 
+//    override fun onCardClick() {
+//
+//        val bundle = Bundle()
+//        bundle.putString(MainActivity.URL_TO_IMAGE, article.urlToImage)
+//        bundle.putString(MainActivity.DESCRIPTION, article.description)
+//        bundle.putString(MainActivity.TITLE, article.title)
+//
+//        navigator.startActivity(DetailActivity::class.java) { putExtra(Navigator.EXTRA_ARG, bundle) }
+//    }
     override fun onCardClick() {
 
         val bundle = Bundle()
@@ -25,14 +41,9 @@ constructor(@AppContext context: Context, navigator: Navigator) : BaseArticleVie
         bundle.putString(MainActivity.DESCRIPTION, article.description)
         bundle.putString(MainActivity.TITLE, article.title)
 
-        navigator.startActivity(DetailActivity::class.java) { putExtra(Navigator.EXTRA_ARG, bundle) }
-        //navigator.replaceFragment();
+        navigator.startActivityTransition(DetailActivity::class.java, findV) { putExtra(Navigator.EXTRA_ARG, bundle) }
 
-//        val intent = Intent()
-//        intent.putExtra(MainActivity.URL_TO_IMAGE, article.urlToImage)
-//        intent.putExtra(MainActivity.DESCRIPTION, article.description)
-//        intent.putExtra(MainActivity.TITLE, article.title)
-//        navigator.startActivity(context,DetailActivity.class)
+
     }
 
 
