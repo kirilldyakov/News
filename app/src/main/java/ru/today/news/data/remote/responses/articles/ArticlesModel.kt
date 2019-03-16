@@ -1,6 +1,6 @@
-package ru.today.news.data.remote.responses.everything
+package ru.today.news.data.remote.responses.articles
 
-data class EverythingModel(
+data class ArticlesModel(
 	val totalResults: Int? = null,
 	val articles: List<ArticlesItem?>? = null,
 	val status: String? = null

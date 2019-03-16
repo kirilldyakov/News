@@ -5,5 +5,6 @@ import ru.today.news.ui.main.viewpager.ArticlesView
 
 
 interface IAllArticlesViewModel : AdapterMvvmViewModel<ArticlesView> {
-    fun reloadData()
+    //fun reloadData()
+    fun reloadData(category: String?)
 }

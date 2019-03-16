@@ -4,9 +4,7 @@ import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import ru.today.news.R
 import ru.today.news.data.db.NewsDatabase
-import ru.today.news.data.db.category.Category
 import ru.today.news.di.qualifier.ActivityFragmentManager
 
 import ru.today.news.di.scopes.PerActivity
@@ -21,15 +19,17 @@ constructor(@ActivityFragmentManager fm: FragmentManager, private val res: Resou
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        return when (position) {
-            0 -> AllArticlesFragment()
-            else -> AllArticlesFragment()
-        }
+        return AllArticlesFragment(getPageKey(position) as String?)
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         var curCategory = newsDatabase.categoryDao.getAll()
         return curCategory[position].ruName
+    }
+
+    fun getPageKey(position: Int): CharSequence? {
+        var curCategory = newsDatabase.categoryDao.getAll()
+        return curCategory[position].enName
     }
 
     override fun getCount(): Int {
