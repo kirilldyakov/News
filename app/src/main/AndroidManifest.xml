@@ -29,6 +29,10 @@
                   android:theme="@style/AppTheme"
                   android:parentActivityName=".ui.main.MainActivity"
         />
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="87e787d6626cba63d0a86977e83497256345bb9d"
+        />
     </application>
 
 </manifest>
