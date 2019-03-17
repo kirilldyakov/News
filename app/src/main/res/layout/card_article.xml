@@ -44,6 +44,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 app:imageUrl="@{vm.urlToImage}"
+                android:transitionName="@string/news_picture_trnasition"
                 android:contentDescription="@string/news_picture"/>
         <TextView
                 android:id="@+id/tv_article_title"

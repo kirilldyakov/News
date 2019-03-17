@@ -8,8 +8,8 @@ import ru.today.news.ui.BaseArticleViewModel
 import ru.today.news.ui.base.navigator.Navigator
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.detail.DetailActivity
-import ru.today.news.ui.main.MainActivity
 import javax.inject.Inject
+
 
 @PerViewHolder
 class ArticleViewModel
