@@ -10,5 +10,6 @@
     <string name="nav_search_title">Поиск</string>
     <string name="apiKey">316663a2285f472b95de0a7f73cf2046</string>
     <string name="dbName">news-db</string>
+    <string name="news_picture_trnasition">NewsPictureTransition</string>
 
 </resources>
