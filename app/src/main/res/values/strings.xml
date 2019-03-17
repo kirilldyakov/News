@@ -5,4 +5,7 @@
     <string name="tab_title_russia">Россия</string>
     <string name="news_not_loaded">Новости не загрузились</string>
     <string name="news_picture">NewsPicture</string>
+    <string name="nav_close">nav_close</string>
+    <string name="nav_open">nav_open</string>
+    <string name="nav_search_title">Поиск</string>
 </resources>
