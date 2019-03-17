@@ -55,7 +55,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, NoOpViewModel<MvvmView>>(
     private fun fillupCategories() {
         newsDatabase.categoryDao.deleteAll()
         newsDatabase.categoryDao.insert(Category("business", "бизнес", 0))
-        newsDatabase.categoryDao.insert(Category("entertainment", "здоровье", 0))
+        newsDatabase.categoryDao.insert(Category("entertainment", "развлечения", 0))
         newsDatabase.categoryDao.insert(Category("general", "главные", 0))
         newsDatabase.categoryDao.insert(Category("health", "здоровье", 0))
         newsDatabase.categoryDao.insert(Category("science", "наука", 0))

@@ -1,7 +1,7 @@
 package ru.today.news.ui
 
 import android.content.Context
-import ru.today.news.data.remote.responses.everything.ArticlesItem
+import ru.today.news.data.remote.responses.articles.ArticlesItem
 import ru.today.news.di.qualifier.AppContext
 import ru.today.news.ui.base.navigator.Navigator
 import ru.today.news.ui.base.view.MvvmView

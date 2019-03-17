@@ -1,4 +1,4 @@
-package ru.today.news.data.remote.responses.everything
+package ru.today.news.data.remote.responses.articles
 
 data class ArticlesItem(
 	val publishedAt: String? = null,

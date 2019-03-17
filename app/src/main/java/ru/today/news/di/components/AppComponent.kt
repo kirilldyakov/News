@@ -18,9 +18,7 @@ import ru.today.news.ui.base.feedback.Toaster
  */
 @PerApplication
 @Component(modules = [(AppModule::class),(NetworkModule::class),(NewsDatabaseModule::class)])
-interface AppComponent : AppComponentProvides {
-
-}
+interface AppComponent : AppComponentProvides
 
 /**
  *Используются для внедрения зависимостей через вызов функции

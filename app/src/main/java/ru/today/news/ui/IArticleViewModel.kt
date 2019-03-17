@@ -16,7 +16,7 @@
 
 package ru.today.news.ui
 
-import ru.today.news.data.remote.responses.everything.ArticlesItem
+import ru.today.news.data.remote.responses.articles.ArticlesItem
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 

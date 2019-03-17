@@ -1,4 +1,4 @@
-package ru.today.news.data.remote.responses.topheadlines
+package ru.today.news.data.remote.responses.articles
 
 data class Source(
 	val name: String? = null,

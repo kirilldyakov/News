@@ -1,5 +1,7 @@
 package ru.today.news.di.modules
 
+import com.facebook.stetho.Stetho
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -42,7 +44,8 @@ class NetworkModule {
                 .addHeader("Authorization", authKeyValue).build()
             chain.proceed(newRequest)
         }
-        return OkHttpClient()
+        builder.addNetworkInterceptor(StethoInterceptor())
+        return builder.build()
     }
 
 
