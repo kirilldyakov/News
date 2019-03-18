@@ -14,15 +14,25 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.detail.DetailActivity">
-        </activity>
+
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.detail.DetailActivity"
+                  android:theme="@style/AppTheme"
+                  android:parentActivityName=".ui.main.MainActivity"
+        />
+        <activity android:name=".ui.search.SearchActivity"
+                  android:theme="@style/AppTheme"
+                  android:parentActivityName=".ui.main.MainActivity"
+        />
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="87e787d6626cba63d0a86977e83497256345bb9d"
+        />
     </application>
 
 </manifest>

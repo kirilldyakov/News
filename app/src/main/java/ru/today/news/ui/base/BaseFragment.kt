@@ -11,9 +11,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import ru.today.news.BR
-import ru.today.news.injection.components.DaggerFragmentComponent
-import ru.today.news.injection.components.FragmentComponent
-import ru.today.news.injection.modules.FragmentModule
+import ru.today.news.di.components.DaggerFragmentComponent
+import ru.today.news.di.components.FragmentComponent
+import ru.today.news.di.modules.FragmentModule
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.util.extension.attachViewOrThrowRuntimeException

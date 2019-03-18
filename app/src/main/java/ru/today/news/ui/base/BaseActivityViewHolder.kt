@@ -5,8 +5,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import ru.today.news.BR
-import ru.today.news.injection.components.ActivityViewHolderComponent
-import ru.today.news.injection.components.DaggerActivityViewHolderComponent
+import ru.today.news.di.components.ActivityViewHolderComponent
+import ru.today.news.di.components.DaggerActivityViewHolderComponent
 import ru.today.news.ui.base.view.MvvmView
 import ru.today.news.ui.base.viewmodel.MvvmViewModel
 import ru.today.news.util.extension.attachViewOrThrowRuntimeException

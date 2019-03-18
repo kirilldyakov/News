@@ -8,6 +8,14 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import androidx.core.content.ContextCompat.startActivity
+import android.R.attr.transitionName
+import ru.today.news.ui.main.MainActivity
+import android.app.ActivityOptions
+import android.os.Build
+import android.view.View
+import ru.today.news.ui.detail.DetailActivity
+
 
 open class ActivityNavigator(protected val activity: FragmentActivity) : Navigator {
 
@@ -35,6 +43,17 @@ open class ActivityNavigator(protected val activity: FragmentActivity) : Navigat
 
     override fun startActivity(activityClass: Class<out Activity>, adaptIntentFun: (Intent.() -> Unit)?) {
         startActivityInternal(activityClass, null, adaptIntentFun)
+    }
+
+    override fun startActivityTransition(activityClass: Class<out Activity>, view: View, transitionName: String) {
+        var intent = Intent(activity, activityClass)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            var transitionActivityOptions:ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(activity, view, transitionName)
+            startActivity(activity, intent, transitionActivityOptions.toBundle())
+        } else {
+            TODO("VERSION.SDK_INT < LOLLIPOP")
+        };
+
     }
 
     override fun startActivityForResult(activityClass: Class<out Activity>, requestCode: Int, adaptIntentFun: (Intent.() -> Unit)?) {
