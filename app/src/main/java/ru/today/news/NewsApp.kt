@@ -1,19 +1,18 @@
 package ru.today.news
 
-import android.app.Application
 import android.content.res.Resources
 import androidx.multidex.MultiDexApplication
 import com.crashlytics.android.Crashlytics
 import com.facebook.stetho.Stetho
 import io.fabric.sdk.android.Fabric
+import io.reactivex.Completable
+import ru.today.news.data.db.category.Category
 import ru.today.news.di.components.AppComponent
 import ru.today.news.di.components.DaggerAppComponent
 import ru.today.news.di.modules.AppModule
 import ru.today.news.di.modules.NetworkModule
 import ru.today.news.di.modules.NewsDatabaseModule
 import timber.log.Timber
-
-
 
 
 /**
@@ -50,27 +49,41 @@ class NewsApp : MultiDexApplication() {
             .newsDatabaseModule(NewsDatabaseModule(this))
             .build()
 
-        initStetho()
+        if (BuildConfig.DEBUG) {
+            initStetho()
+        }
+
+        fillCategories()
     }
 
     private fun initStetho() {
-        // Create an InitializerBuilder
         val initializerBuilder = Stetho.newInitializerBuilder(this)
-
-        // Enable Chrome DevTools
         initializerBuilder.enableWebKitInspector(
             Stetho.defaultInspectorModulesProvider(this)
         )
-
-        // Enable command line interface
         initializerBuilder.enableDumpapp(
             Stetho.defaultDumperPluginsProvider(this)
         )
-
-        // Use the InitializerBuilder to generate an Initializer
         val initializer = initializerBuilder.build()
-
-        // Initialize Stetho with the Initializer
         Stetho.initialize(initializer)
+    }
+
+    private fun fillCategories() {
+        var newsDatabase = NewsApp.appComponent.newsDatabase()
+
+        newsDatabase.categoryDao.deleteAll()
+        Completable.fromAction {
+            var categories = ArrayList<Category>()
+
+            categories.add(Category("business", "бизнес", 0))
+            categories.add(Category("entertainment", "развлечения", 0))
+            categories.add(Category("general", "главные", 0))
+            categories.add(Category("health", "здоровье", 0))
+            categories.add(Category("science", "наука", 0))
+            categories.add(Category("sports", "спорт", 0))
+            categories.add(Category("technology", "технологии", 0))
+
+            newsDatabase.categoryDao.insertAll(categories)
+        }.subscribe()
     }
 }
