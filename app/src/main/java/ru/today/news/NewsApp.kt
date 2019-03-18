@@ -2,7 +2,10 @@ package ru.today.news
 
 import android.app.Application
 import android.content.res.Resources
+import androidx.multidex.MultiDexApplication
+import com.crashlytics.android.Crashlytics
 import com.facebook.stetho.Stetho
+import io.fabric.sdk.android.Fabric
 import ru.today.news.di.components.AppComponent
 import ru.today.news.di.components.DaggerAppComponent
 import ru.today.news.di.modules.AppModule
@@ -18,7 +21,7 @@ import timber.log.Timber
  *
  * DaggerAppComponent создаётся даггером на этапе компиляции.
  */
-class NewsApp : Application() {
+class NewsApp : MultiDexApplication() {
 
     companion object {
 
@@ -34,6 +37,8 @@ class NewsApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        Fabric.with(this, Crashlytics())
 
         Timber.plant(Timber.DebugTree())
 
